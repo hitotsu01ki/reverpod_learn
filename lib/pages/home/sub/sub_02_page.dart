@@ -8,7 +8,7 @@ class Sub02Page extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = ref.watch(appThemeProvider);
-    return Scaffold(
+    return const Scaffold(
       body: SafeArea(
         child: Center(
           child: Text('Sub02Route'),

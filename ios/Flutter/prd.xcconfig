@@ -1,0 +1,9 @@
+//
+//  prd.xcconfig
+//  Runner
+//
+//  Created by 一木貴弘 on 2022/07/01.
+//
+
+FLAVOR=prd
+APP_ID_SUFFIX=
