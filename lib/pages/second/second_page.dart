@@ -15,45 +15,45 @@ class SecondPage extends HookConsumerWidget {
     final log = ref.watch(debugLogPrintProvider);
 
     return Scaffold(
-      appBar: AppBar(title: Text('AutoRouter')),
+      appBar: AppBar(title: const Text('AutoRouter')),
       body: SafeArea(
         child: ListView(
           children: [
             ListTile(
-              leading: Text('Page 01 pushRoute'),
-              trailing: Icon(Icons.arrow_forward_ios),
+              leading: const Text('Page 01 pushRoute'),
+              trailing: const Icon(Icons.arrow_forward_ios),
               onTap: () {
                 log.fine('pushRoute');
                 router.pushRoute = Sub01Route(label: 'pushRoute');
               },
             ),
             ListTile(
-              leading: Text('Page 02 push'),
-              trailing: Icon(Icons.arrow_forward_ios),
+              leading: const Text('Page 02 push'),
+              trailing: const Icon(Icons.arrow_forward_ios),
               onTap: () {
                 log.fine('push');
                 router.push = Sub01Route(label: 'push');
               },
             ),
             ListTile(
-              leading: Text('Page 03 navigate'),
-              trailing: Icon(Icons.arrow_forward_ios),
+              leading: const Text('Page 03 navigate'),
+              trailing: const Icon(Icons.arrow_forward_ios),
               onTap: () {
                 log.fine('navigate');
                 router.navigate = Sub01Route(label: 'navigate');
               },
             ),
             ListTile(
-              leading: Text('Page 04 popAndPush'),
-              trailing: Icon(Icons.arrow_forward_ios),
+              leading: const Text('Page 04 popAndPush'),
+              trailing: const Icon(Icons.arrow_forward_ios),
               onTap: () {
                 log.fine('popAndPush');
                 router.popAndPush = Sub01Route(label: 'popAndPush');
               },
             ),
             ListTile(
-              leading: Text('Page 05 replace'),
-              trailing: Icon(Icons.arrow_forward_ios),
+              leading: const Text('Page 05 replace'),
+              trailing: const Icon(Icons.arrow_forward_ios),
               onTap: () {
                 log.fine('replace');
                 // router.replace = Sub01Route(label: 'replace');

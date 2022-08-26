@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_app/pages/theme/app_theme.dart';
 
@@ -18,12 +17,12 @@ class Ui01Page extends HookConsumerWidget {
           children: [
             Container(
               height: 200,
-              margin: EdgeInsets.symmetric(vertical: 20),
+              margin: const EdgeInsets.symmetric(vertical: 20),
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: List.generate(5, (index) => Container(
                     clipBehavior: Clip.antiAlias,
-                    margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                    margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                     decoration: BoxDecoration(
                       color: Colors.cyanAccent,
                       borderRadius: BorderRadius.circular(20),
@@ -32,7 +31,7 @@ class Ui01Page extends HookConsumerWidget {
                           color: Colors.black.withOpacity(0.2),
                           spreadRadius: 1.0,
                           blurRadius: 5.0,
-                          offset: Offset(5, 5),
+                          offset: const Offset(5, 5),
                         ),
                       ],
                     ),

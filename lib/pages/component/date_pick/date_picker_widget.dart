@@ -13,7 +13,7 @@ class DatePickerWidget extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = ref.watch(appThemeProvider);
-    final _size = ref.watch(phoneSizeProvider);
+    final size = ref.watch(phoneSizeProvider);
     final log = ref.watch(debugLogPrintProvider);
 
     return SizedBox(

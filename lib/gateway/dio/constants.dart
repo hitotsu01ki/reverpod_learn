@@ -55,7 +55,7 @@ class Constants {
     );
   }
 
-  static late final Constants instance = Constants.of();
+  static final Constants instance = Constants.of();
 
   final String endpoint; // AWS
   final String contentType;

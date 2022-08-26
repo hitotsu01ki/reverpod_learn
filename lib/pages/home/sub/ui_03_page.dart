@@ -11,7 +11,7 @@ class Ui03Page extends HookConsumerWidget {
     return Scaffold(
       body: SafeArea(
         child: ListView(
-          children: [
+          children: const [
             Center(
               child: Text('Ui03Route'),
             ),
