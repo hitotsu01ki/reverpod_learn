@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "556125211021",
+    "project_id": "riverpod-app-001",
+    "storage_bucket": "riverpod-app-001.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:556125211021:android:a04bff880705b9e13915c4",
+        "android_client_info": {
+          "package_name": "jp.co.thinkapp.riverpodapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "556125211021-phgf2n4vpfh1hp4645c0ku33lfhor4l1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtAmS0wTS6jSgYzHPNEXpOFRGYFuvFjB8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "556125211021-phgf2n4vpfh1hp4645c0ku33lfhor4l1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "556125211021-7sjq0b11p29c6v0jlmugm3nl05ts87i2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "jp.co.think-app.riverpodapp.dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:556125211021:android:58a0c51101a533f83915c4",
+        "android_client_info": {
+          "package_name": "jp.co.thinkapp.riverpodapp.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "556125211021-phgf2n4vpfh1hp4645c0ku33lfhor4l1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtAmS0wTS6jSgYzHPNEXpOFRGYFuvFjB8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "556125211021-phgf2n4vpfh1hp4645c0ku33lfhor4l1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "556125211021-7sjq0b11p29c6v0jlmugm3nl05ts87i2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "jp.co.think-app.riverpodapp.dev"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
