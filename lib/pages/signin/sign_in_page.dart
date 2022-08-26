@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_app/gateway/auth/enum_sign_in.dart';
-import 'package:riverpod_app/gen/assets.gen.dart';
 import 'package:riverpod_app/notifier/signin/sign_in_notifier.dart';
 import 'package:riverpod_app/pages/component/text/text_button_widget.dart';
 import 'package:riverpod_app/pages/component/text/text_field_widget.dart';

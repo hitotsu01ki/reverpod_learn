@@ -20,7 +20,7 @@ class CameraUtils {
   File? file;
 
   Future<bool> camera() async {
-    XFile? _pickedFile;
+    XFile? pickedFile;
     PermissionStatus status = await Permission.camera.status;
     _log.info(status);
     if (status.isDenied || status.isPermanentlyDenied) {
@@ -28,12 +28,12 @@ class CameraUtils {
       await openAppSettings();
       return false;
     }
-    _pickedFile = await picker.pickImage(source: ImageSource.camera);
-    return fileCheck(_pickedFile);
+    pickedFile = await picker.pickImage(source: ImageSource.camera);
+    return fileCheck(pickedFile);
   }
 
   Future<bool> gallery() async {
-    XFile? _pickedFile;
+    XFile? pickedFile;
     if (await platform.then((value) => value.isIOS())) { // Android9以上は権限不要
       PermissionStatus status = await Permission.photos.status;
       _log.info(status);
@@ -43,16 +43,16 @@ class CameraUtils {
         return false;
       }
     }
-    _pickedFile = await picker.pickImage(source: ImageSource.gallery);
-    return fileCheck(_pickedFile);
+    pickedFile = await picker.pickImage(source: ImageSource.gallery);
+    return fileCheck(pickedFile);
   }
 
-  bool fileCheck(XFile? _pickedFile) {
-    if (_pickedFile == null) {
+  bool fileCheck(XFile? pickedFile) {
+    if (pickedFile == null) {
       _log.info('画像選択をキャンセル');
       return false;
     }
-    file = File(_pickedFile.path);
+    file = File(pickedFile.path);
     return true;
   }
 
