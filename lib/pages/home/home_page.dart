@@ -28,10 +28,10 @@ class HomePage extends HookConsumerWidget {
               },
             ),
             ListTile(
-              leading: const Text('UI Text 01'),
+              leading: const Text('Live Streaming'),
               trailing: const Icon(Icons.arrow_forward_ios),
               onTap: () {
-                log.fine('UI Text 01');
+                log.fine('Live Streaming');
                 router.push = const Ui01Route();
               },
             ),

@@ -1,0 +1,10 @@
+{
+    "@@locale": "en",
+    "submit": "SUBMIT",
+    "cancel": "CANCEL",
+    "ui01page": "UI Test01",
+    "ui02page": "UI Test02",
+    "ui03page": "UI Test03",
+    "ui04page": "UI Test04",
+    "ui05page": "UI Test05"
+}

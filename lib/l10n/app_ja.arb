@@ -1,0 +1,10 @@
+{
+    "@@locale": "ja",
+    "submit": "決定",
+    "cancel": "キャンセル",
+    "ui01page": "UIテスト01",
+    "ui02page": "UIテスト02",
+    "ui03page": "UIテスト03",
+    "ui04page": "UIテスト04",
+    "ui05page": "UIテスト05"
+}

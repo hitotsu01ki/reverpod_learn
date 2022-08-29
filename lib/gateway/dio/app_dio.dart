@@ -9,6 +9,8 @@ import 'package:ua_client_hints/ua_client_hints.dart';
 
 final dioProvider = Provider((_) => AppDio.getInstance());
 final zipDioProvider = Provider((_) => AppDio.getCustomInstance('https://zipcloud.ibsnet.co.jp'));
+final googleDioProvider = Provider((_) => AppDio.getCustomInstance('https://www.googleapis.com'));
+final twitterDioProvider = Provider((_) => AppDio.getCustomInstance('https://api.twitter.com'));
 
 // ignore: prefer_mixin
 class AppDio with DioMixin implements Dio {

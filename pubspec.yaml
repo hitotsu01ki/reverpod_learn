@@ -15,6 +15,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations: # flutter gen-l10n
+    sdk: flutter
 
 #  provider: ^6.0.2
 #  image_picker: ^0.8.3+3
@@ -32,7 +34,7 @@ dependencies:
   # Flavor # flutter run --dart-define=FLAVOR=dev
   flutter_flavorizr: ^2.1.3
   package_info_plus: ^1.4.2 # アプリ情報取得
-  permission_handler: ^10.0.0 # 権限確認
+  permission_handler: ^9.2.0 # 権限確認
 
   # Architecture
   flutter_hooks: ^0.18.0
@@ -58,6 +60,8 @@ dependencies:
   retrofit: ^3.0.1+1
   # User-Agent Client Hints
   ua_client_hints: ^1.1.1
+  twitter_api_v2: ^3.0.1
+  better_player: ^0.0.83
 
   # Model
   json_serializable: ^6.2.0
@@ -72,6 +76,8 @@ dependencies:
   google_fonts: ^3.0.1
   image_picker: ^0.8.5+3 # カメラ・フォトギャラリー
   cached_network_image: ^3.2.0 # ネットワークイメージ
+  tweet_ui: ^4.0.3 # ツイッターUI
+  scroll_page_view: ^1.0.2 # ループするpageView
 
   # Utils
   simple_logger: ^1.9.0 # ログ出力
@@ -79,6 +85,9 @@ dependencies:
   flutter_image_compress: ^1.1.0 # 画像の圧縮
   flutter_svg: ^1.1.4 # 画像拡張子を追加
   collection: ^1.15.0 # 万能型変換
+  youtube_player_flutter: ^8.1.0 # youtubeストリーミング
+  youtube_player_iframe: ^3.0.4 # iOS版youtubeストリーミング
+  flutter_inappwebview: ^5.4.3+7 # アプリレビュー
 
 dev_dependencies: # flutter packages pub run build_runner build --delete-conflicting-outputs
   flutter_test:
@@ -117,6 +126,7 @@ flutter_icons: # flutter pub run flutter_launcher_icons:main
 
 
 flutter:
+#  generate: true
   uses-material-design: true
   assets:
     - assets/

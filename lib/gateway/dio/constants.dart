@@ -60,4 +60,11 @@ class Constants {
   final String endpoint; // AWS
   final String contentType;
   final String apiKey;
+  final String googleApiKey = '';
+  final String twitterApiKey = '';
+  final String twitterBearerToken = '';
+  final String twitterAccessToken = '';
+  final String twitterAccessTokenSecret = '';
+  final String twitterConsumerKey = '';
+  final String twitterConsumerSecret = '';
 }

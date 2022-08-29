@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:riverpod_app/l10n/l10n.dart';
 import 'package:riverpod_app/route/app_route.gr.dart';
 import 'package:riverpod_app/pages/theme/app_theme.dart';
 import 'package:package_info_plus/package_info_plus.dart';
@@ -54,6 +55,17 @@ class App extends HookConsumerWidget {
       themeMode: themeMode,
       routeInformationParser: appRouter.defaultRouteParser(),
       routerDelegate: appRouter.delegate(),
+      localizationsDelegates: L10n.localizationsDelegates, // 言語設定１
+      supportedLocales: L10n.supportedLocales, // 言語設定２
+      localeResolutionCallback: (locale, supportedLocales) { // 言語設定３
+        if (locale != null) {
+          final _locale = Locale(locale.languageCode);
+          if (supportedLocales.contains(_locale)) {
+            return _locale;
+          }
+        }
+        return supportedLocales.first;
+      },
     );
   }
 }
