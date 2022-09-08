@@ -1,22 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_app/l10n/l10n.dart';
-import 'package:riverpod_app/notifier/home/sub/ui_01_notifier.dart';
+import 'package:riverpod_app/pages/component/decoration/shadow_container.dart';
 import 'package:riverpod_app/pages/theme/app_theme.dart';
 import 'package:riverpod_app/pages/utils/debug_provider.dart';
 import 'package:tweet_ui/models/api/v2/entities/media_v2.dart';
 import 'package:tweet_ui/tweet_ui.dart';
 import 'package:twitter_api_v2/twitter_api_v2.dart';
-
-final isTweetsOrMediaProvider = StateNotifierProvider<TweetsOrMedia, bool>(
-        (ref) => TweetsOrMedia());
-
-class TweetsOrMedia extends StateNotifier<bool> {
-  TweetsOrMedia() : super(false);
-
-  switchState() => state = !state;
-}
-
 
 class TweetsPageView extends HookConsumerWidget {
   const TweetsPageView({
@@ -63,31 +53,31 @@ class TweetsPageView extends HookConsumerWidget {
       List<Widget> tweetsStackList = [];
       tweetsStackList.add(Align(
         alignment: Alignment.topLeft,
-        child: Container(
-          clipBehavior: Clip.antiAlias,
-          margin: const EdgeInsets.only(left: 10, top: 10, bottom: 50, right: 100),
-          decoration: BoxDecoration(
+        child: GestureDetector(
+          onTap: () {
+            log.fine('message');
+          },
+          child: ShadowContainer(
+            margin: const EdgeInsets.only(left: 10, top: 10, bottom: 50, right: 100),
             color: const Color(0xffe0e0e0),
-            borderRadius: BorderRadius.circular(20),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.2),
-                spreadRadius: 1.0,
-                blurRadius: 5.0,
-                offset: const Offset(5, 5),
-              ),
-            ],
-          ),
-          child: ListView(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: TweetView.fromTweetV2(
-                  tweetV2List[index],
-                  backgroundColor: const Color(0xffe0e0e0),
+            child: Stack(
+              children: [
+                ListView(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: TweetView.fromTweetV2(
+                        tweetV2List[index],
+                        backgroundColor: const Color(0xffe0e0e0),
+                      ),
+                    ),
+                  ],
                 ),
-              ),
-            ],
+                // Container(
+                //   color: Colors.transparent,
+                // ),
+              ],
+            ),
           ),
         ),
       ));
@@ -102,21 +92,9 @@ class TweetsPageView extends HookConsumerWidget {
 
         tweetsStackList.add(Align(
           alignment: Alignment.bottomRight,
-          child: Container(
-            clipBehavior: Clip.antiAlias,
+          child: ShadowContainer(
             margin: const EdgeInsets.only(left: 100, top: 50, bottom: 10, right: 10),
-            decoration: BoxDecoration(
-              color: const Color(0xffe0e0e0),
-              borderRadius: BorderRadius.circular(20),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withOpacity(0.2),
-                  spreadRadius: 1.0,
-                  blurRadius: 5.0,
-                  offset: const Offset(5, 5),
-                ),
-              ],
-            ),
+            color: const Color(0xffe0e0e0),
             child: ListView(
               children: [
                 Image.network(imagePath),

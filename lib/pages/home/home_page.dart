@@ -28,18 +28,18 @@ class HomePage extends HookConsumerWidget {
               },
             ),
             ListTile(
-              leading: const Text('Live Streaming'),
+              leading: const Text('Live Streaming / Search Tweets'),
               trailing: const Icon(Icons.arrow_forward_ios),
               onTap: () {
-                log.fine('Live Streaming');
+                log.fine('Live Streaming / Search Tweets');
                 router.push = const Ui01Route();
               },
             ),
             ListTile(
-              leading: const Text('UI Text 02'),
+              leading: const Text('My Tweets / Search Spotify'),
               trailing: const Icon(Icons.arrow_forward_ios),
               onTap: () {
-                log.fine('UI Text 02');
+                log.fine('My Tweets / Search Spotify');
                 router.push = const Ui02Route();
               },
             ),

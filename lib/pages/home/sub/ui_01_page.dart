@@ -3,6 +3,7 @@ import 'package:gap/gap.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_app/l10n/l10n.dart';
 import 'package:riverpod_app/notifier/home/sub/ui_01_notifier.dart';
+import 'package:riverpod_app/pages/component/decoration/shadow_container.dart';
 import 'package:riverpod_app/pages/component/text/text_button_widget.dart';
 import 'package:riverpod_app/pages/component/tweets/tweets_page_view.dart';
 import 'package:riverpod_app/pages/theme/app_theme.dart';
@@ -35,20 +36,7 @@ class Ui01Page extends HookConsumerWidget {
               : PageView.builder(
                 itemCount: ui01state.liveIds.length,
                 itemBuilder: (context, index) {
-                  return Container(
-                    clipBehavior: Clip.antiAlias,
-                    margin: const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withOpacity(0.2),
-                          spreadRadius: 1.0,
-                          blurRadius: 5.0,
-                          offset: const Offset(5, 5),
-                        ),
-                      ],
-                    ),
+                  return ShadowContainer(
                     child: YoutubePlayer(
                       controller: ui01notifier.youtubePlayerControllerList[index],
                       showVideoProgressIndicator: true,
@@ -101,15 +89,21 @@ class Ui01Page extends HookConsumerWidget {
               pageController: ui01notifier.tweetsPageController,
               onPageChanged: (int index) {
                 if (ui01notifier.currentPage > index) {
-                  ui01notifier.cancelTweetsTimer();
-                } else {
+                  log.finer('${ui01notifier.currentPage} >  $index');
+                  ui01notifier.cancelTimerWithTweetsPage();
+                } if (index == 0) {
+                  log.finer('${ui01notifier.currentPage} = $index');
                   ui01notifier.currentPage = index;
-                  ui01notifier.setTweetsTimer();
+                  ui01notifier.setTimerWithTweetsPage();
+                } else {
+                  log.finer('${ui01notifier.currentPage} <= $index');
+                  ui01notifier.currentPage = index;
+                  ui01notifier.setTimerWithTweetsPage();
                 }
               },
               onTapTweetsUIChange: () {
                 log.fine('onTapTweetsUIChange');
-                ui01notifier.cancelTweetsTimer();
+                ui01notifier.cancelTimerWithTweetsPage();
                 ui01notifier.switchTweetsPhotoPriority();
               },
             ),
@@ -129,7 +123,7 @@ class Ui01Page extends HookConsumerWidget {
               onTap: () async {
                 await ui01notifier.fetchTweets();
               },
-              label: 'loadTweet'
+              label: 'Reload Tweets'
             ),
 
           ],

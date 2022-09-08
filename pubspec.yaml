@@ -28,7 +28,6 @@ dependencies:
 
   freezed: ^2.1.0+1
   shared_preferences: ^2.0.15
-  webview_flutter:
   json_annotation:
 
   # Flavor # flutter run --dart-define=FLAVOR=dev
@@ -62,6 +61,7 @@ dependencies:
   ua_client_hints: ^1.1.1
   twitter_api_v2: ^3.0.1
   better_player: ^0.0.83
+  spotify: ^0.8.0
 
   # Model
   json_serializable: ^6.2.0
@@ -78,6 +78,8 @@ dependencies:
   cached_network_image: ^3.2.0 # ネットワークイメージ
   tweet_ui: ^4.0.3 # ツイッターUI
   scroll_page_view: ^1.0.2 # ループするpageView
+  url_launcher: ^6.1.5 # URLを開く
+  webview_flutter: ^3.0.4 # 埋め込みUELを開く
 
   # Utils
   simple_logger: ^1.9.0 # ログ出力

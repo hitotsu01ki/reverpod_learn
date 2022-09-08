@@ -60,6 +60,8 @@ class Constants {
   final String endpoint; // AWS
   final String contentType;
   final String apiKey;
+  final String spotifyApiKey = '';
+  final String spotifyApiKeySecret = '';
   final String googleApiKey = '';
   final String twitterApiKey = '';
   final String twitterBearerToken = '';

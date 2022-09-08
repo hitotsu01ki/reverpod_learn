@@ -14,7 +14,11 @@ final ui01NotifierProvider = StateNotifierProvider.autoDispose<Ui01Notifier, UI0
   (ref) {
     ref.onDispose(() {
       final timer = ref.watch(timerProvider);
-      timer.disposeTimer();
+      if (timer.timer != null) {
+        if (timer.timer!.isActive) {
+          timer.disposeTimer();
+        }
+      }
     });
     return Ui01Notifier(ref.read);
   }
@@ -47,8 +51,8 @@ class Ui01Notifier extends StateNotifier<UI01PageModel> {
       success: (success) {
         final ids = success.map((e) => e.id!.videoId).toList();
         ids.shuffle();
+        refreshYoutubeLives(ids);
         state = state.copyWith(liveIds: ids);
-        fetchYoutubeLives();
         return true;
       },
       failure: (failure) {
@@ -59,9 +63,10 @@ class Ui01Notifier extends StateNotifier<UI01PageModel> {
     );
   }
 
-  fetchYoutubeLives() {
+  refreshYoutubeLives(List<String> liveIds) {
+    youtubePlayerControllerList = [];
     youtubePlayerControllerList.addAll(
-        state.liveIds.map((id) => YoutubePlayerController(
+      liveIds.map((id) => YoutubePlayerController(
         initialVideoId: id,
         flags: const YoutubePlayerFlags(
           mute: true,
@@ -78,46 +83,37 @@ class Ui01Notifier extends StateNotifier<UI01PageModel> {
     tweets.when(
       success: (success) {
         state = state.copyWith(tweetV2List: success);
-        setTweetsTimer();
+        setTimerWithTweetsPage();
       },
-      failure: (failure){
+      failure: (failure) {
         _log.severe(failure.type);
         _log.severe(failure.message);
       }
     );
   }
 
-  void cancelTweetsTimer() {
-    _timer.disposeTimer();
-  }
-
-  void setTweetsTimer() {
-    if (_timer.timer != null) {
-      if (_timer.timer!.isActive) {
-        return;
-      }
-    }
-    _timer.setTimer = Timer.periodic(
-      const Duration(seconds: 3),
-          (timer) async {
-        if (currentPage < state.tweetV2List.length - 1) {
-          currentPage++;
-        } else {
-          currentPage = 0;
-        }
-
-        await tweetsPageController.animateToPage(
-          currentPage,
-          duration: const Duration(milliseconds: 200),
-          curve: Curves.linear,
-        );
-      },
-    );
-
-  }
-
   switchTweetsPhotoPriority() {
     state = state.copyWith(isTweetsPhotoPriority: !state.isTweetsPhotoPriority);
+  }
+
+  void setTimerWithTweetsPage() {
+    _timer.addTimerListener((timer) async {
+      if (currentPage < state.tweetV2List.length - 1) {
+        currentPage++;
+      } else {
+        currentPage = 0;
+      }
+
+      await tweetsPageController.animateToPage(
+        currentPage,
+        duration: const Duration(milliseconds: 200),
+        curve: Curves.linear,
+      );
+    }, const Duration(seconds: 4));
+  }
+
+  void cancelTimerWithTweetsPage() {
+    _timer.disposeTimer();
   }
 
 
