@@ -62,6 +62,7 @@ dependencies:
   twitter_api_v2: ^3.0.1
   better_player: ^0.0.83
   spotify: ^0.8.0
+  chaleno: ^0.0.6 # web scraping
 
   # Model
   json_serializable: ^6.2.0

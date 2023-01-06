@@ -104,11 +104,14 @@ class Ui01Notifier extends StateNotifier<UI01PageModel> {
         currentPage = 0;
       }
 
-      await tweetsPageController.animateToPage(
-        currentPage,
-        duration: const Duration(milliseconds: 200),
-        curve: Curves.linear,
-      );
+      if (tweetsPageController.hasClients) {
+        await tweetsPageController.animateToPage(
+          currentPage,
+          duration: const Duration(milliseconds: 200),
+          curve: Curves.linear,
+        );
+      }
+
     }, const Duration(seconds: 4));
   }
 
