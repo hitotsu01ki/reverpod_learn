@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:riverpod_app/notifier/home/sub/zip_notifier.dart';
+import 'package:riverpod_app/notifier/home/zip_notifier.dart';
 import 'package:riverpod_app/pages/component/text/text_button_widget.dart';
 import 'package:riverpod_app/pages/component/text/text_field_widget.dart';
 import 'package:riverpod_app/pages/theme/app_theme.dart';

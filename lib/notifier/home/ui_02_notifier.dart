@@ -59,7 +59,7 @@ class Ui02Notifier extends StateNotifier<UI01PageModel> implements SpotifyTimer 
   // Timer? spotifyTimer;
 
   Future<void> userLookup() async {
-    final tweets = await _twitterApi.userLookup('');
+    final tweets = await _twitterApi.userLookup('hitotsu01ki');
     tweets.when(
         success: (success) {
           linkedTweet(success.id);
@@ -86,7 +86,7 @@ class Ui02Notifier extends StateNotifier<UI01PageModel> implements SpotifyTimer 
   }
 
   Future<void> tweetLookup() async {
-    final tweets = await _twitterApi.tweetLookupById('');
+    final tweets = await _twitterApi.tweetLookupById('1564774331896709121');
     tweets.when(
         success: (success) {
           _log.fine(success.text);

@@ -1,10 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:riverpod_app/pages/home/home_page.dart';
-import 'package:riverpod_app/pages/home/sub/ui_01_page.dart';
-import 'package:riverpod_app/pages/home/sub/ui_02_page.dart';
-import 'package:riverpod_app/pages/home/sub/ui_03_page.dart';
-import 'package:riverpod_app/pages/home/sub/ui_04_page.dart';
-import 'package:riverpod_app/pages/home/sub/zip_search_page.dart';
+import 'package:riverpod_app/pages/home/ui_01_page.dart';
+import 'package:riverpod_app/pages/home/ui_02_page.dart';
+import 'package:riverpod_app/pages/home/ui_03_page.dart';
+import 'package:riverpod_app/pages/home/ui_04_page.dart';
+import 'package:riverpod_app/pages/home/zip_search_page.dart';
 import 'package:riverpod_app/pages/second/second_page.dart';
 import 'package:riverpod_app/pages/navigation/navigation_page.dart';
 import 'package:riverpod_app/pages/second/sub/sub_01_page.dart';

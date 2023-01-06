@@ -79,7 +79,7 @@ class Ui01Notifier extends StateNotifier<UI01PageModel> {
   }
 
   Future<void> fetchTweets() async {
-    final tweets = await _twitterApi.tweetSearch('#Flutter -is:retweet -is:reply');
+    final tweets = await _twitterApi.tweetSearch('#Flutter -is:retweet -is:reply has:media');
     tweets.when(
       success: (success) {
         state = state.copyWith(tweetV2List: success);
